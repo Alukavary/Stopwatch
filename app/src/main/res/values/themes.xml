@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Stopwatch" parent="Theme.Material3.DayNight.NoActionBar">
+    </style>
+    <style name="time">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textSize">50sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="marginHorizontal">30dp</item>
+        <item name="android:text">00</item>
+        <item name="android:layout_marginBottom">100dp</item>
+
+    </style>
+
+    <style name="Theme.Stopwatch" parent="Base.Theme.Stopwatch" />
+</resources>

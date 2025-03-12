@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:fitsSystemWindows="true"
-    android:background="#4C7FAB"
+    android:background="@android:color/system_tertiary_container_dark"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -54,8 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
             android:padding="10dp"
-            android:text="@string/lap"
-            android:fontFamily="casual"
+            android:text="Круг"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -65,10 +64,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:fontFamily="casual"
-            android:text="@string/start"
+            android:text="Старт"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            />
 
     </LinearLayout>
 

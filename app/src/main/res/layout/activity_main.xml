@@ -13,9 +13,9 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         >
 
             <TextView
@@ -44,7 +44,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginHorizontal="30dp"
         android:orientation="horizontal"
         android:layout_marginBottom="20dp">
 
@@ -52,9 +51,9 @@
             android:id="@+id/button_circle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
             android:padding="10dp"
             android:text="@string/lap"
+           android:layout_marginHorizontal="20dp"
             android:fontFamily="casual"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -64,7 +63,7 @@
             android:id="@+id/button_start_continue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginHorizontal="20dp"
             android:fontFamily="casual"
             android:text="@string/start"
             android:textSize="20sp"

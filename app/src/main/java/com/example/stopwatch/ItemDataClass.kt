@@ -1,6 +1,6 @@
 package com.example.stopwatch
 
-data class ItemClass(
+data class ItemDataClass(
     val numberCircle: String,
     val time: String
-) {}
+)

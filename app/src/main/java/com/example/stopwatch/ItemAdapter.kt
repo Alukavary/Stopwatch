@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class ItemAdapter(var items: List<ItemClass>): RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
+class ItemAdapter(var items: List<ItemDataClass>): RecyclerView.Adapter<ItemAdapter.ViewHolder>() {
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val circleTime: TextView = view.findViewById(R.id.number_circle )
         val timeText: TextView = view.findViewById(R.id.text_time)
@@ -34,13 +34,10 @@ class ItemAdapter(var items: List<ItemClass>): RecyclerView.Adapter<ItemAdapter.
       return items.size
     }
 
-    fun updateData(newData: List<ItemClass>){
+    fun updateData(newData: List<ItemDataClass>){
         items = newData
         notifyDataSetChanged()
     }
-
-
-
 
 
 

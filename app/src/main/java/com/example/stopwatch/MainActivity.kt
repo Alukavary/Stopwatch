@@ -1,8 +1,8 @@
 package com.example.stopwatch
 
-import android.content.res.ColorStateList
-import android.graphics.Color
+import android.media.MediaPlayer
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -12,7 +12,6 @@ import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.core.graphics.toColorInt
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,9 +30,17 @@ class MainActivity : AppCompatActivity() {
         val textMin: TextView = findViewById(R.id.text_min)
         val textSec:TextView = findViewById(R.id.text_sec)
 
+
+        val mediaPlayerStart = MediaPlayer.create(this, R.raw.btn1)
+        val mediaPlayerLap = MediaPlayer.create(this, R.raw.btn2)
+        val mediaPlayerReset = MediaPlayer.create(this, R.raw.btn3)
+        val mediaPlayerStop = MediaPlayer.create(this, R.raw.btn4)
+
+
         val recycleView: RecyclerView = findViewById(R.id.recycle_list)
 
         val viewModel: StopwatchViewModel = ViewModelProvider(this)[StopwatchViewModel::class.java]
+
 
         viewModel.button1StateStartStop.observe(this){new ->
             buttonStartContinue.text = new
@@ -44,6 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         viewModel.itemData.observe(this){new ->
+            Log.d("Abc23", new.toString())
             adapter?.updateData(new)
         }
 
@@ -63,7 +71,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-
         viewModel.isGreenOr.observe(this) { isGreenOr ->
             if (isGreenOr) {
                 buttonStartContinue.setTextColor(ContextCompat.getColor(this, R.color.button_text_green))
@@ -82,12 +89,13 @@ class MainActivity : AppCompatActivity() {
         recycleView.adapter = adapter
 
         buttonStartContinue.setOnClickListener{
-            viewModel.toggleButton1()
+            viewModel.toggleButton1(mediaPlayerStart, mediaPlayerStop)
         }
 
         buttonCircle.setOnClickListener{
-            viewModel.toggleButton2()
+            viewModel.toggleButton2(mediaPlayerLap, mediaPlayerReset)
         }
 
     }
+
 }
